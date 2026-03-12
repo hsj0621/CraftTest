@@ -33,6 +33,11 @@ public class ResourcePackTestCommand extends AbstractCommand {
     public void onCommand(CommandSender sender, String[] args) {
 
         if (args.length < 2) {
+            if(args[0].equals("보스바")) {
+                sender.hideBossBar(bar);
+                Msg.send(sender, "보스바를 숨겼습니다.");
+                return;
+            }
             usages(sender);
             return;
         }
@@ -42,11 +47,6 @@ public class ResourcePackTestCommand extends AbstractCommand {
             sender.sendActionBar(Msg.mm(message));
         }
         else if(args[0].equals("보스바")) {
-            if(message.equalsIgnoreCase("X")) {
-                sender.hideBossBar(bar);
-                Msg.send(sender, "보스바를 숨겼습니다.");
-                return;
-            }
             bar.name(Msg.mm(message));
             sender.showBossBar(bar);
         }

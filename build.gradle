@@ -10,8 +10,8 @@ jar {
     archiveBaseName.set("CraftTest")
     archiveVersion.set('1.0')
     archiveFileName.set('CraftTest.jar')
-    destinationDirectory.set(file("C:/Users/rukon/Desktop/updatedPlugins"))
-    //destinationDirectory.set(file("Z:/server/plugins"))
+    //destinationDirectory.set(file("C:/Users/rukon/Desktop/updatedPlugins"))
+    destinationDirectory.set(file("Z:/server/plugins"))
     //destinationDirectory.set(file("Y:/dev/plugins"))
 }
 
