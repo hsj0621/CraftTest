@@ -1,0 +1,15 @@
+name: CraftTest
+version: '1.0'
+main: org.craft.test.CraftTest
+api-version: '1.21'
+commands:
+    crafttest:
+        description: Test command for CraftTest plugin
+        usage: /<command>
+        permission: crafttest.use
+    repacktest:
+        description: Test command for repackaged CraftTest plugin
+        usage: /<command>
+        permission: crafttest.use
+        aliases:
+            - 리팩테스트
