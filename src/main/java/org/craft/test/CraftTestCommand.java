@@ -33,8 +33,11 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.components.CustomModelDataComponent;
 import org.bukkit.persistence.PersistentDataType;
 import org.jetbrains.annotations.NotNull;
+import org.trk.craft.api.chat.ChatManager;
 import org.trk.craft.api.data.PlayerData;
+import org.trk.craft.api.utils.HangulUtil;
 
+import java.util.Arrays;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
@@ -113,6 +116,9 @@ public class CraftTestCommand implements CommandExecutor {
             itemData.setName(Msg.mm("<red>Test Name"));
             ItemStack itemStack = itemData.get();
             //player.getInventory().setItemInMainHand(itemStack);
+        }
+        else if (args[0].equals("한글")) {
+            Msg.send(player, String.valueOf(ChatManager.INSTANCE.getTextLength(args[1])));
         }
         else if (args[0].equals("nickname")) {
             String name = args.length >= 2 ? CommandUtil.mergeArgs(args, 1) : "";
