@@ -118,7 +118,18 @@ public class CraftTestCommand implements CommandExecutor {
             //player.getInventory().setItemInMainHand(itemStack);
         }
         else if (args[0].equals("한글")) {
-            Msg.send(player, String.valueOf(ChatManager.INSTANCE.getTextLength(args[1])));
+            Msg.send(player, String.valueOf(ChatManager.getInst().getTextLength(args[1])));
+        }
+        else if (args[0].equals("bgtest")) {
+
+            String text = CommandUtil.mergeArgs(args, 1);
+            StringBuilder sb = new StringBuilder("<!shadow><font:hud/alert>\u00A0\u0101");
+            int length = ChatManager.getInst().getTextLength(text);
+            Msg.send(player, "TextLength: " + length);
+            sb.append(Msg.getColor(0, 0, length));
+            sb.append("\u00A1<#000001>\u0102\u0202").append(text).append("\u0103\u00A2");
+            Msg.send(player, Msg.mm(sb.toString()));
+            player.sendActionBar(Msg.mm(sb.toString()));
         }
         else if (args[0].equals("nickname")) {
             String name = args.length >= 2 ? CommandUtil.mergeArgs(args, 1) : "";
