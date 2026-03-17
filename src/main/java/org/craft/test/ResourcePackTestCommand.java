@@ -57,7 +57,7 @@ public class ResourcePackTestCommand extends AbstractCommand {
             int fadeIn, stay, fadeOut;
             String mainTitle, subTitle;
 
-            mainTitle = message.replaceAll("_", " ").trim();
+            mainTitle = args[1].replaceAll("_", " ").trim();
             subTitle = args.length > 2 ? StringEscapeUtils.unescapeJava(args[2]).replaceAll("_", " ").trim() : "";
             try {
                 fadeIn = args.length > 3 ? Integer.parseInt(args[3]) : 10;
