@@ -108,6 +108,11 @@ public class CraftTestCommand implements CommandExecutor {
             String text = CommandUtil.mergeArgs(args, 1);
             bar.name(Msg.mm(StringEscapeUtils.unescapeJava(text)));
             player.showBossBar(bar);
+
+            Iterable<? extends BossBar> bossBars = player.activeBossBars();
+                bossBars.forEach(bossBar -> {
+                    Msg.send(player, "Active BossBar: " + bossBar.name());
+                });
         }
         else if(args[0].equals("meta")) {
 
@@ -126,7 +131,7 @@ public class CraftTestCommand implements CommandExecutor {
             StringBuilder sb = new StringBuilder("<!shadow><font:hud/alert>\u00A0\u0101");
             int length = ChatManager.getInst().getTextLength(text);
             Msg.send(player, "TextLength: " + length);
-            sb.append(Msg.getColor(0, 0, length));
+            sb.append(Msg.getColor(0, length / 255, length % 255));
             sb.append("\u00A1<#000001>\u0102\u0202").append(text).append("\u0103\u00A2");
             Msg.send(player, Msg.mm(sb.toString()));
             player.sendActionBar(Msg.mm(sb.toString()));
