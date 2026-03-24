@@ -11,7 +11,7 @@ jar {
     archiveVersion.set('1.0')
     archiveFileName.set('CraftTest.jar')
     //destinationDirectory.set(file("C:/updatedPlugins"))
-    destinationDirectory.set(file("Z:/server/plugins"))
+    destinationDirectory.set(file("Z:/lobby1/plugins"))
     //destinationDirectory.set(file("Y:/dev/plugins"))
 }
 
